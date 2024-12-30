@@ -1,6 +1,6 @@
 "use client";
 
-import { useCodeEditorStore } from "@/store/useCodeEditorStore";
+import { getExecutionResult, useCodeEditorStore } from "@/store/useCodeEditorStore";
 import { useUser } from "@clerk/nextjs";
 import { useMutation } from "convex/react";
 import { motion } from "framer-motion";
@@ -9,22 +9,23 @@ import { api } from "../../../../convex/_generated/api";
 
 function RunButton() {
 	const { user } = useUser();
-	const { runCode, language, isRunning, executionResult } = useCodeEditorStore();
+	const { runCode, language, isRunning } = useCodeEditorStore();
 	const saveExecution = useMutation(api.codeExecutions.saveExecution);
 
 	const handleRun = async () => {
 		await runCode();
+		const result = getExecutionResult();
 
-		if (user && executionResult) {
+		if (user && result) {
 			// TODO: save result in convex
 			await saveExecution({
 				language,
-				code: executionResult.code,
-				output: executionResult.output || undefined,
-				error: executionResult.error || undefined,
+				code: result.code,
+				output: result.output || undefined,
+				error: result.error || undefined,
 			});
 		}else{
-			console.error("User or executionResult not found. Can't save execution result");
+			console.log("User or executionResult not found. Can't save execution result");
 		}
 	};
 

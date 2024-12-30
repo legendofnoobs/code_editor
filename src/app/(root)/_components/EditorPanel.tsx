@@ -10,6 +10,7 @@ import { Editor } from '@monaco-editor/react';
 import { useClerk } from '@clerk/nextjs';
 import useMounted from '@/hooks/useMounted';
 import { EditorPanelSkeleton } from './EditorPanelSkeleton';
+import ShareSnippetDialog from './ShareSnippetDialog';
 
 const EditorPanel = () => {
 	const clerk = useClerk();
@@ -63,7 +64,7 @@ const EditorPanel = () => {
 					</div>
 					<div className="flex items-center gap-3">
 						{/* Font Size Slider */}
-						<div className="flex items-center gap-3 px-3 py-2 bg-[#1e1e2e] rounded-lg ring-1 ring-white/5">
+						<div className="flex items-center gap-3 px-3 py-2 bg-[#1e1e2e] rounded-lg ring-1 ring-blue-600/5">
 							<TypeIcon className="size-4 text-gray-400" />
 							<div className="flex items-center gap-3">
 								<input
@@ -72,7 +73,7 @@ const EditorPanel = () => {
 									max="24"
 									value={fontSize}
 									onChange={(e) => handleFontSizeChange(parseInt(e.target.value))}
-									className="w-20 h-1 bg-gray-600 rounded-lg cursor-pointer"
+									className="w-20 h-1 bg-blue-600 rounded-lg cursor-pointer"
 								/>
 								<span className="text-sm font-medium text-gray-400 min-w-[2rem] text-center">
 									{fontSize}
@@ -84,7 +85,7 @@ const EditorPanel = () => {
 							whileHover={{ scale: 1.1 }}
 							whileTap={{ scale: 0.95 }}
 							onClick={handleRefresh}
-							className="p-2 bg-[#1e1e2e] hover:bg-[#2a2a3a] rounded-lg ring-1 ring-white/5 transition-colors"
+							className="p-2 bg-[#1e1e2e] hover:bg-[#2222b8] rounded-lg ring-1 ring-white/5 transition-colors"
 							aria-label="Reset to default code"
 						>
 							<RotateCcwIcon className="size-4 text-gray-400" />
@@ -140,7 +141,7 @@ const EditorPanel = () => {
 					{!clerk.loaded && <EditorPanelSkeleton />}
 				</div>
 			</div>
-			{/* {isShareDialogOpen && <ShareSnippetDialog onClose={() => setIsShareDialogOpen(false)} />} */}
+			{isShareDialogOpen && <ShareSnippetDialog onClose={() => setIsShareDialogOpen(false)} />}
 		</div>
 	)
 }
