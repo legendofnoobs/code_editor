@@ -3,7 +3,7 @@ import { ConvexHttpClient } from 'convex/browser'
 import React from 'react'
 import { api } from '../../../../convex/_generated/api'
 import Link from 'next/link'
-import { Blocks, Code2, Sparkles } from 'lucide-react'
+import { Blocks, Code2 } from 'lucide-react'
 //import { SignedIn } from '@clerk/nextjs'
 import ThemeSelector from './ThemeSelector'
 import LanguageSelector from './LanguageSelector'
@@ -63,7 +63,7 @@ const Header = async () => {
 					<LanguageSelector hasAccess={Boolean(convexUser?.isPro)} />
 				</div>
 
-				{!convexUser?.isPro && (
+				{/* {!convexUser?.isPro && (
 					<Link
 						href="/pricing"
 						className="flex items-center gap-2 px-4 py-1.5 rounded-lg border border-amber-500/20 hover:border-amber-500/40 bg-gradient-to-r from-amber-500/10 to-orange-500/10 hover:from-amber-500/20 hover:to-orange-500/20 transition-all duration-300"
@@ -73,7 +73,7 @@ const Header = async () => {
 							Pro
 						</span>
 					</Link>
-				)}
+				)} */}
 
 				{/* <SignedIn>
 					<RunButton />

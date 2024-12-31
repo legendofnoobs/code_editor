@@ -18,23 +18,23 @@ export const syncUser = mutation({
 				userId: args.userId,
 				email: args.email,
 				name: args.name,
-				isPro: false,
+				isPro: true,
 			});
 		}
 	},
 });
 
 export const getUser = query({
-	args: {userId: v.string()},
+	args: { userId: v.string() },
 
 	handler: async (ctx, args) => {
-		if(!args.userId) return null;
+		if (!args.userId) return null;
 
 		const user = await ctx.db
-		.query("users")
-		.withIndex("by_user_id")
-		.filter((q)=> q.eq(q.field("userId"), args.userId))
-		.first();
+			.query("users")
+			.withIndex("by_user_id")
+			.filter((q) => q.eq(q.field("userId"), args.userId))
+			.first();
 
 		if (!user) return null;
 

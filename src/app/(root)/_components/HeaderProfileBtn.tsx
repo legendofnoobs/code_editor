@@ -16,7 +16,9 @@ function HeaderProfileBtn() {
 			</UserButton>
 
 			<SignedOut>
-				<SignInButton />
+				<div className="bg-gradient-to-r from-blue-600 to-blue-500 rounded-lg opacity-100 transition-opacity group-hover:opacity-90 px-4 py-2">
+					<SignInButton />
+				</div>
 			</SignedOut>
 		</>
 	);
