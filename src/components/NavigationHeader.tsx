@@ -1,6 +1,5 @@
 import HeaderProfileBtn from "@/app/(root)/_components/HeaderProfileBtn";
-import { SignedOut } from "@clerk/nextjs";
-import { Blocks, Code2, Sparkles } from "lucide-react";
+import { Blocks } from "lucide-react";
 import Link from "next/link";
 
 function NavigationHeader() {
@@ -9,7 +8,7 @@ function NavigationHeader() {
 			<div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5" />
 			<div className="max-w-7xl mx-auto px-4">
 				<div className="relative h-16 flex items-center justify-between">
-					<div className="flex items-center gap-8">
+					<div className="flex items-center gap-4">
 						{/* Logo */}
 						<Link href="/" className="flex items-center gap-3 group relative">
 							{/* logo hover effect */}
@@ -35,7 +34,7 @@ function NavigationHeader() {
 						</Link>
 
 						{/* snippets Link */}
-						<Link
+						{/* <Link
 							href="/snippets"
 							className="relative group flex items-center gap-2 px-4 py-1.5 rounded-lg text-gray-300 bg-gray-800/50 hover:bg-blue-500/10 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg overflow-hidden"
 						>
@@ -46,12 +45,12 @@ function NavigationHeader() {
 							<span className="text-sm font-medium relative z-10 group-hover:text-white transition-colors">
 								Snippets
 							</span>
-						</Link>
+						</Link> */}
 					</div>
 
 					{/* right rection */}
 					<div className="flex items-center gap-4">
-						<SignedOut>
+						{/* <SignedOut>
 							<Link
 								href="/pricing"
 								className="flex items-center gap-2 px-4 py-1.5 rounded-lg border border-amber-500/20 hover:border-amber-500/40 bg-gradient-to-r from-amber-500/10 to-orange-500/10 hover:from-amber-500/20 hover:to-orange-500/20 transition-all duration-300"
@@ -61,7 +60,7 @@ function NavigationHeader() {
 									Pro
 								</span>
 							</Link>
-						</SignedOut>
+						</SignedOut> */}
 
 						{/* profile button */}
 						<HeaderProfileBtn />

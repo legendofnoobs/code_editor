@@ -47,7 +47,7 @@ const ThemeSelector = () => {
 				whileHover={{ scale: 1.02 }}
 				whileTap={{ scale: 0.98 }}
 				onClick={() => setIsOpen(!isOpen)}
-				className="w-48 group relative flex items-center gap-2 px-4 py-2.5 bg-[#1e1e2e]/80 hover:bg-[#262637] 
+				className="w-auto group relative flex items-center gap-2 px-4 py-2.5 bg-[#1e1e2e]/80 hover:bg-[#262637] 
         rounded-lg transition-all duration-200 border border-gray-800/50 hover:border-gray-700"
 			>
 				{/* hover state bg decorator */}
@@ -55,7 +55,7 @@ const ThemeSelector = () => {
 
 				<Palette className="w-4 h-4 text-gray-400 group-hover:text-gray-300 transition-colors" />
 
-				<span className="text-gray-300 min-w-[80px] text-left group-hover:text-white transition-colors">
+				<span className="text-gray-300 min-w-[80px] text-xs text-left group-hover:text-white transition-colors">
 					{currentTheme?.label}
 				</span>
 

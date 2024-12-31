@@ -53,17 +53,17 @@ const EditorPanel = () => {
 		<div className="relative">
 			<div className="relative bg-[#12121a]/90 backdrop-blur rounded-xl border border-white/[0.05] p-6">
 				{/* Header */}
-				<div className="flex items-center justify-between mb-4">
+				<div className="flex items-center justify-between mb-4 max-[546px]:flex-wrap gap-2">
 					<div className="flex items-center gap-3">
 						<div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#1e1e2e] ring-1 ring-white/5">
 							<Image src={"/" + language + ".png"} alt="Logo" width={24} height={24} />
 						</div>
-						<div className=' max-[1400px]:hiddend'>
+						<div className=' max-[1400px]:hidden'>
 							<h2 className="text-sm font-medium text-white">Code Editor</h2>
 							<p className="text-xs text-gray-500">Write and execute your code</p>
 						</div>
 					</div>
-					<div className="flex items-center gap-3">
+					<div className="flex items-center gap-3 max-[546px]:flex-wrap">
 						
 						{/* Font Size Slider */}
 						<div className="flex items-center gap-3 px-3 py-2 bg-[#1e1e2e] rounded-lg ring-1 ring-blue-600/5">

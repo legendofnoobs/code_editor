@@ -41,12 +41,11 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
 				whileHover={{ scale: 1.02 }}
 				whileTap={{ scale: 0.98 }}
 				onClick={() => setIsOpen(!isOpen)}
-				className={`group relative flex items-center gap-3 px-4 py-2.5 bg-[#1e1e2e]/80 rounded-lg transition-all duration-200 border border-gray-800/50 hover:border-gray-700 ${!hasAccess && language !== "javascript" ? "opacity-50 cursor-not-allowed" : ""}`}
+				className={`group relative flex items-center gap-2 px-4 py-1.5 bg-[#1e1e2e]/80 rounded-lg transition-all duration-200 border border-gray-800/50 hover:border-gray-700 ${!hasAccess && language !== "javascript" ? "opacity-50 cursor-not-allowed" : ""}`}
 			>
 				{/* Decoration */}
 				<div
-					className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/5 
-        rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
+					className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
 					aria-hidden="true"
 				/>
 
@@ -54,13 +53,13 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
 					<Image
 						src={currentLanguageObj.logoPath}
 						alt="programming language logo"
-						width={24}
-						height={24}
+						width={20}
+						height={20}
 						className="w-full h-full object-contain relative z-10"
 					/>
 				</div>
 
-				<span className="text-gray-200 min-w-[80px] text-left group-hover:text-white transition-colors">
+				<span className="text-gray-200 w-auto text-xs text-left group-hover:text-white transition-colors hidden sm:block">
 					{currentLanguageObj.label}
 				</span>
 
