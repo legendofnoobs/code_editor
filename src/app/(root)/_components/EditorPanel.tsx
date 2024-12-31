@@ -11,6 +11,7 @@ import { useClerk } from '@clerk/nextjs';
 import useMounted from '@/hooks/useMounted';
 import { EditorPanelSkeleton } from './EditorPanelSkeleton';
 import ShareSnippetDialog from './ShareSnippetDialog';
+import RunButton from './RunButton';
 
 const EditorPanel = () => {
 	const clerk = useClerk();
@@ -63,6 +64,7 @@ const EditorPanel = () => {
 						</div>
 					</div>
 					<div className="flex items-center gap-3">
+						
 						{/* Font Size Slider */}
 						<div className="flex items-center gap-3 px-3 py-2 bg-[#1e1e2e] rounded-lg ring-1 ring-blue-600/5">
 							<TypeIcon className="size-4 text-gray-400" />
@@ -91,12 +93,16 @@ const EditorPanel = () => {
 							<RotateCcwIcon className="size-4 text-gray-400" />
 						</motion.button>
 
+						<div>
+							<RunButton/>
+						</div>
+
 						{/* Share Button */}
 						<motion.button
 							whileHover={{ scale: 1.02 }}
 							whileTap={{ scale: 0.98 }}
 							onClick={() => setIsShareDialogOpen(true)}
-							className="inline-flex items-center gap-2 px-4 py-2 rounded-lg overflow-hidden bg-gradient-to-r from-blue-500 to-blue-600 opacity-90 hover:opacity-100 transition-opacity"
+							className="inline-flex items-center gap-2 px-4 py-2 rounded-lg overflow-hidden bg-gradient-to-r from-blue-600 to-blue-500 opacity-90 hover:opacity-100 transition-opacity"
 						>
 							<ShareIcon className="size-4 text-white" />
 							<span className="text-sm font-medium text-white ">Share</span>
