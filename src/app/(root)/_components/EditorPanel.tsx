@@ -58,7 +58,7 @@ const EditorPanel = () => {
 						<div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#1e1e2e] ring-1 ring-white/5">
 							<Image src={"/" + language + ".png"} alt="Logo" width={24} height={24} />
 						</div>
-						<div>
+						<div className=' max-[1400px]:hiddend'>
 							<h2 className="text-sm font-medium text-white">Code Editor</h2>
 							<p className="text-xs text-gray-500">Write and execute your code</p>
 						</div>
