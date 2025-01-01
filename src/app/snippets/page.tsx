@@ -34,7 +34,7 @@ const page = () => {
 	const filteredSnippets = snippets.filter((snippet) => {
 		const matchesSearch =
 			snippet.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-			snippet.language.toLowerCase().includes(searchQuery.toLowerCase()) ||
+			snippet.language.toLowerCase().includes(searchQuery.toLowerCase().trim()) ||
 			snippet.userName.toLowerCase().includes(searchQuery.toLowerCase());
 
 		const matchesLanguage = !selectedLanguage || snippet.language === selectedLanguage;
