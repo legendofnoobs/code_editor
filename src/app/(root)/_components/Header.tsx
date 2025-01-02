@@ -19,7 +19,7 @@ const Header = async () => {
 
 	return (
 		<div className='relative z-10'>
-			<div className='flex items-center lg:justify-between justify-center bg-[#0a0a0f]/80 backdrop-blur-xl p-6 mb-4 rounded-lg'>
+			<div className='flex lg:justify-between justify-center bg-[#0a0a0f]/80 backdrop-blur-xl p-6 mb-4 rounded-lg items-center'>
 				<div className='hidden lg:flex items-center gap-8'>
 					<Link href={`/`} className='flex items-center gap-3 group relative'>
 						<div className='absolute -inset-2 bg-gradient-to-t from-blue-500/20 to-purple-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl' />
@@ -58,7 +58,7 @@ const Header = async () => {
 					</nav>
 				</div>
 				<div className="flex items-center gap-4">
-				<div className="flex items-center gap-2 max-[500px]:flex-wrap">
+				<div className="flex items-center gap-2 max-[550px]:flex-wrap">
 					<ThemeSelector />
 					<LanguageSelector hasAccess={Boolean(convexUser?.isPro)} />
 					<Link
@@ -95,7 +95,7 @@ const Header = async () => {
 					<RunButton />
 				</SignedIn> */}
 
-				<div>
+				<div className=' w-28 flex justify-center items-center'>
 					<HeaderProfileBtn/>
 				</div>
 			</div>
