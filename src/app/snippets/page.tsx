@@ -52,8 +52,7 @@ const page = () => {
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
-						className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r
-             from-blue-500/10 to-purple-500/10 text-sm text-gray-400 mb-6"
+						className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-sm text-gray-400 mb-6"
 					>
 						<BookOpen className="w-4 h-4" />
 						Community Code Library
@@ -141,8 +140,8 @@ const page = () => {
 								<button
 									onClick={() => setView("grid")}
 									className={`p-2 rounded-md transition-all ${view === "grid"
-											? "bg-blue-500/20 text-blue-400"
-											: "text-gray-400 hover:text-gray-300 hover:bg-[#262637]"
+										? "bg-blue-500/20 text-blue-400"
+										: "text-gray-400 hover:text-gray-300 hover:bg-[#262637]"
 										}`}
 								>
 									<Grid className="w-4 h-4" />
@@ -150,8 +149,8 @@ const page = () => {
 								<button
 									onClick={() => setView("list")}
 									className={`p-2 rounded-md transition-all ${view === "list"
-											? "bg-blue-500/20 text-blue-400"
-											: "text-gray-400 hover:text-gray-300 hover:bg-[#262637]"
+										? "bg-blue-500/20 text-blue-400"
+										: "text-gray-400 hover:text-gray-300 hover:bg-[#262637]"
 										}`}
 								>
 									<Layers className="w-4 h-4" />
@@ -164,8 +163,8 @@ const page = () => {
 				{/* Snippets Grid */}
 				<motion.div
 					className={`grid gap-6 ${view === "grid"
-							? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-							: "grid-cols-1 max-w-3xl mx-auto"
+						? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+						: "grid-cols-1 max-w-3xl mx-auto"
 						}`}
 					layout
 				>
